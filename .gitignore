@@ -2,3 +2,5 @@ map1/data/
 .Rhistory
 .RData
 .Renviron
+map1/out/frames/
+map1/out/frames_test/
