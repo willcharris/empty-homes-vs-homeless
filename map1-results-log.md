@@ -34,3 +34,10 @@ Pre-registered before any burden data were pulled (map1-preregistration-claim-1c
 
 ## Corrections log
 - 2026-10-13: an earlier national comparison paired 50-state-plus-DC vacancy with HUD's 745,652 (which includes territories); corrected to 742,420 (Amendment 3).
+
+
+## Sensitivity S1 (post-hoc, NOT pre-registered; 2026-10-13)
+Script: map1/13_moe_check.R. Question: does each CoC's narrow vacant count beat its homeless count after allowing for ACS sampling error? Method: 90% margins of error summed across tracts (square root of summed squares; only the largest MOE among zero-estimate parts counted). PIT has no sampling MOE here; its undercount is a separate limit.
+Result: 381 of 382 CoCs beat the homeless count at the low end. Exception: MA-502 Lynn (1,316 vs 1,271; range 0.81 to 1.27 to 1), too close to call. Claim 1 verdict unchanged (pre-registered rule used point estimates).
+Spread: ratio 1.04 to 231 (median 18.5); 7 CoCs under 2:1, 54 under 5:1, 116 under 10:1.
+Specifications tried so far: unchanged. S1 is a sensitivity check, not a refinement.
