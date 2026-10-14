@@ -18,8 +18,8 @@ Numbers marked [pull] are filled from `map1/data/national_coc_vacancy_vs_pit.csv
   - Cyan dots: people counted homeless on one night in January 2025. HUD AHAR Part 1 PIT counts by CoC.
 - DECIDED: 1 dot = 100 (units or people), same for both layers. About 86,642 amber and 7,424 cyan dots. At 250, 56 CoCs would expect under one cyan dot (7 at 100), so 100 it is; the random rounding below handles those 7. Check legibility at 1080 px wide.
 - Dot count per CoC = floor(n / 100) plus one extra dot with probability equal to the remainder / 100, fixed seed (set.seed(1)), so small CoCs are not rounded to nothing and the rule is reproducible.
-- Placement: both layers placed at random inside the same CoC polygon (sf::st_sample). Location inside a CoC is NOT data. This matters most for large "balance of state" CoCs. It is stated on the map. Vacancy is known by tract and homelessness only by CoC, so tract-level placement for one layer only would give false precision to one side; random placement treats both the same.
-- Check before rendering: confirm CoC polygons are clipped to land (HUD boundaries may include water); clip with a land layer if they do.
+- Placement (DECIDED 2026-10-13, replaces random-in-polygon): both layers placed inside the CoC's census tracts, each dot's tract drawn with probability proportional to the tract's total housing units (ACS B25002_001), then a random point inside that tract (sf::st_sample). Same rule for both layers. Dot position is modeled, NOT measured: vacancy is known by tract but homelessness only by CoC, so using real tract vacancy for one layer would give false precision to one side. Reason for changing: random placement inside a CoC polygon scatters dots across mountains and desert, which looks wrong and adds noise. Tract outlines: Census cartographic boundary tracts (tigris, 2023, 2020 geography, matching the ACS 2020-2024 tracts).
+- Water check (2026-10-13, map1/15_water_check.R): 0.07% of total CoC area lies outside land (Census coast-clipped state outlines, 500k); 3 CoCs over 1% (VA-507 4.3%, MA-503 1.8%, CA-501 1.6%); none over 5%. Pre-set rule: no clipping needed. Tract-based placement makes this moot for dots anyway.
 - Projection: EPSG:5070 (Albers equal area) for sampling and drawing, so dot density is not distorted by latitude. Alaska and Hawaii inset: decision needed at render time.
 
 ## Color logic (dark, glowing, additive blend)
@@ -33,7 +33,7 @@ Numbers marked [pull] are filled from `map1/data/national_coc_vacancy_vs_pit.csv
 ## Title and first thing to notice
 - Title (a question): "Are there more empty homes than homeless people?"
 - Viewer should notice first: a sea of amber with a thin scatter of cyan, in every region, not just a few.
-- The note that must be on the frame: "Dots are placed at random inside each region. Position within a region is not data."
+- The note that must be on the frame: "Dots are placed in proportion to housing within each region, not at actual locations."
 
 ## Animation (no real time series, so this is a reveal, not time)
 - Label on frame: "Reveal order is a west-to-east sweep, not time."
@@ -65,13 +65,17 @@ What this can't show: that those units could house those people. They may be in 
 
 My view (advocate): price and policy, not a lack of buildings, is the main barrier. That is my reading, not something this map proves.
 
-Dots are placed at random inside each region. Sources: U.S. Census Bureau ACS 2020-2024; HUD 2025 AHAR Part 1; HUD CoC boundaries. Method and limits in the link in bio.
+Dots are placed in proportion to housing within each region, not at actual locations. Sources: U.S. Census Bureau ACS 2020-2024; HUD 2025 AHAR Part 1; HUD CoC boundaries. Method and limits in the link in bio.
 
 ## Corrections-log line
 [publish date]: Map 1 published. Data pulled 2026-10-13. Pre-registration amendments 1-5 are listed in the repo. No corrections to date.
 
+## Done so far
+- Slide 3 figure: map1/out/scatter_1b_1c.png (14_scatter_plots.R), committed.
+- Water check (15_water_check.R), committed.
+
 ## Still to write
-- 1b and 1c scatter plots (inputs: national_coc_1b.csv rent_w and vac_rate vs rate_10k; national_coc_1c.csv burden vs rate_10k).
+- Dot generation (16_make_dots.R), then the render (static still first, then animation frames).
 - Log sensitivity S1 in map1-results-log.md; add the survey-error limit to the methodology note.
 - Methodology note (datasets, years, steps, limits), built from map1-results-log.md and the five amendments.
 - Alt text, final versions.
