@@ -1,6 +1,6 @@
 # Map 1 spec: Are there more empty homes than homeless people?
 
-Status: built 2026-10-14 (still, 20 s video, 5-slide carousel, methodology note). Waiting on: repo made public, Instagram format check on Instagram's own pages, final caption approved. Stance: advocate (the author's view, labeled as such). Finding and stance are kept separate.
+Status: built 2026-10-14 (still, 20 s video, 5-slide carousel, methodology note). Instagram specs checked on Instagram's own pages 2026-10-14. Waiting on: repo made public, final caption approved, publish date. Stance: advocate (the author's view, labeled as such). Finding and stance are kept separate.
 Numbers come from `map1/data/national_coc_vacancy_vs_pit.csv`, `national_coc_1b.csv` and `national_coc_1c.csv` and the results log, never typed from memory.
 
 ## Verdicts this map rests on (from map1-results-log.md)
@@ -52,7 +52,7 @@ Numbers come from `map1/data/national_coc_vacancy_vs_pit.csv`, `national_coc_1b.
 4. "What this can't show": Lynn too close to call and six more regions under 2 to 1; highest ratios are rural where homelessness is hardest to count; units may be in the wrong place, in poor condition or unaffordable; one-night January undercount; vacancy is a 2020-2024 average and survey error was allowed for after the fact (381 of 382 hold); dots show 8,664,169 placed units vs the 8,665,393 national total and positions are modeled; territories excluded and Suffolk County NY gaps.
 5. "Sources and method": ACS tables, HUD report and boundaries, how drawn, pulled 2026-10-13, test written before looking with five amendments, "My view (advocate)" block, "Code, pre-registration and method note: link in bio." (true only once the repo is public), and the Census API notice.
 
-## Alt text (Instagram, each under 100 characters; confirm the cap on Instagram's pages)
+## Alt text (Instagram, each under 100 characters; Instagram states no cap)
 1. Title card: Are there more empty homes than homeless people? One claim says yes. I tested it.
 2. US dot map: amber dots for 8.7M vacant homes far outnumber cyan dots for 742,000 homeless people.
 3. Three scatter plots: rent and rent burden track homelessness rates only loosely; vacancy barely.
@@ -77,11 +77,15 @@ This product uses the Census Bureau Data API but is not endorsed or certified by
 
 ## Still to do
 - Make the repo public (so "link in bio" is true), then set the bio link.
-- Verify Instagram specs on Instagram's own pages (Reels size, frame rate, file size, alt-text length, caption length) and finalize the caption.
+- Instagram specs: checked on Instagram's own pages 2026-10-14 (see the last section). Still unconfirmed: Reels max file size/length and an official caption cap. Caption awaits the author's approval.
+- Fill the publish date in the corrections log here and in map1-methodology.md.
 - Optional before posting: re-run the palette validator on #0B0F14.
 - After posting: accessible ratio choropleth, light-background map, README for the repo, rerun when new ACS and HUD data arrive.
 
-## Instagram specs checked 2026-10-13 (one secondary source; re-verify on Instagram's own help pages before export)
-- Reels: 9:16, 1080 x 1920, at least 30 fps, MP4 or MOV, H.264/AAC. Source page contradicts itself on max file size, so confirm.
-- Carousel: up to 10 slides; 1:1 (1080 x 1080), 4:5 (1080 x 1350) or 1.91:1. Use 4:5 for stills.
-- Source: https://www.socialpilot.co/blog/instagram-video-size (published 2025-12-04)
+## Instagram specs checked 2026-10-14 on Instagram's own help pages (read in the browser pane)
+- Reels (https://help.instagram.com/1038071743007909): aspect ratio between 1.91:1 and 9:16; at least 30 fps; at least 720 px resolution; cover 420 x 654 (1:1.55). Max file size, length and format were NOT confirmed (the "Additional technical details" section was not expanded). Ours: 1080 x 1920, 30 fps, 20 s, 2.4 MB, H.264. Passes every confirmed rule.
+- Carousel (https://help.instagram.com/269314186824048): up to 20 photos/videos (the earlier secondary source said 10; wrong). One orientation applies to all items. Videos inside a carousel are not Reels, so post the Reel separately. Ours: 5 slides, all 4:5.
+- Photos (https://help.instagram.com/1631821640426723): width up to 1080 px; supported aspect ratios 1.91:1 to 3:4 (height 566 to 1440 at width 1080). 1080 x 1350 is supported; unsupported ratios are cropped.
+- Alt text (https://help.instagram.com/503708446705527): added under Accessibility; no character limit stated. Our alt texts stay under 100 characters anyway.
+- Caption length: no limit confirmed on official pages. Ours is 1,344 characters (the commonly cited figure is 2,200, unverified).
+- Superseded source: socialpilot.co/blog/instagram-video-size (2025-12-04).
