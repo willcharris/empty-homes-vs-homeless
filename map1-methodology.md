@@ -58,7 +58,7 @@ Sources: https://www.huduser.gov/portal/datasets/ahar/2025-ahar-part-1-pit-estim
 - Pre-registration locked 2026-10-13 before data were pulled. Before locking I had seen only HUD's national total (745,652) and national seasonal/for-sale vacancy figures.
 - Amendment 1: tract assignment by largest overlap. 2: Suffolk County gap, vacant units. 3: scope clarified to 50 states + DC, an earlier national comparison corrected to match, assignment outcomes recorded. 4: Suffolk County gap, population. 5: Suffolk County gap, renter households.
 - Claim 1c's pre-registration was written and delivered in chat before its data were pulled but saved to the project folder after the pull. Its content is unchanged.
-- The pre-registration also called for a national comparison from the ACS 2024 1-year estimates. No such comparison is recorded in the results log.
+- The pre-registration also called for a national comparison from the ACS 2024 1-year estimates. I ran it on 2026-10-14, after the main analysis: 8,566,020 narrow vacant units (+/- 85,398), or 11.5 to 1, against 8,665,393 and 11.7 to 1 in the 5-year data. The 1-year figure is 1.1% lower, which is expected when one year is compared with a five-year average. The conclusion is unchanged.
 - Specifications tried: 3 vacancy definitions, 3 tract-assignment methods, 3 rows for 1b, 4 rows for 1c, and the post hoc survey-error check. Nothing else was run.
 - Findings are published whatever they showed. 1b and 1c complicate my stated view that price and policy, not a lack of buildings, is the main barrier.
 

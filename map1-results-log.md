@@ -41,3 +41,12 @@ Script: map1/13_moe_check.R. Question: does each CoC's narrow vacant count beat 
 Result: 381 of 382 CoCs beat the homeless count at the low end. Exception: MA-502 Lynn (1,316 vs 1,271; range 0.81 to 1.27 to 1), too close to call. Claim 1 verdict unchanged (pre-registered rule used point estimates).
 Spread: ratio 1.04 to 231 (median 18.5); 7 CoCs under 2:1, 54 under 5:1, 116 under 10:1.
 Specifications tried so far: unchanged. S1 is a sensitivity check, not a refinement.
+
+
+## ACS 2024 1-year national check (pre-registered, run after the main analysis; 2026-10-14)
+Script: map1/20_acs1_national.R. The pre-registration said the national comparison would also be reported from the ACS 2024 1-year estimates; it was not run with the main analysis and is recorded here.
+- Narrow vacant units, ACS 2024 1-year (B25004: for rent 2,800,315; for sale 849,448; other vacant 4,916,257): 8,566,020 (+/- 85,398, 90% MOE).
+- Narrow vacant units, ACS 2020-2024 5-year (the map): 8,665,393. The 1-year figure is 99,373 lower (1.1%).
+- Ratio to 742,420 people: 11.5 to 1 (1-year) vs 11.7 to 1 (5-year). Low end of the 1-year range: 11.4 to 1.
+- Reading: same conclusion, Claim 1 verdict unchanged. The gap is slightly larger than the 1-year margin of error alone, as expected when one year is compared with a five-year average.
+- Pulled 2026-10-14. Specifications tried: unchanged (this is a pre-registered check, not a refinement).
