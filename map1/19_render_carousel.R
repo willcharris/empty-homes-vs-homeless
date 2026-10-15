@@ -1,4 +1,4 @@
-# 19_render_carousel.R  (v2, 2026-10-14: slide 1 overlap, headline wrap, larger limits text)
+# 19_render_carousel.R  (v3, 2026-10-14: Census API notice added to slide 5)
 # Five carousel slides, 1080 x 1350 (4:5). Reads saved files only. Run from the project root.
 #   1 the claim as a question   2 the map (copy of the locked still)
 #   3 the complication (rent / rent burden / vacancy vs homelessness rate, redrawn dark)
@@ -151,7 +151,9 @@ s5 <- canvas(c(
     txt(50, y5 - 26, "My view (advocate)", size = 3.4, bold = TRUE, col = amber),
     txt(50, y5 - 70, "Price and policy, not a lack of buildings, is the main barrier. That is my reading, not something this map proves.",
         size = 3.4, wrap = 56),
-    txt(50, 130, REPO_LINE, size = 3.1, col = dimc, vjust = 0.5)
+    txt(50, 130, REPO_LINE, size = 3.1, col = dimc, vjust = 0.5),
+    txt(50, 92, "This product uses the Census Bureau Data API but is not endorsed or certified by the Census Bureau.",
+        size = 2.4, col = dimc, wrap = 82)
   )))
 stopifnot(y5 - 70 - 3 * 3.4 * 9.48 * 1.1 > 150)       # my-view block must clear the footer
 save_slide(s5, "map1/out/carousel_5_sources.png")
