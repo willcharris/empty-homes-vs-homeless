@@ -27,6 +27,8 @@ Rules were written before the data were pulled (see the pre-registration files i
 
 Sources: https://www.huduser.gov/portal/datasets/ahar/2025-ahar-part-1-pit-estimates-of-homelessness-in-the-us.html, https://www.hudexchange.info/programs/coc/gis-tools/, and the Census API through the tidycensus R package.
 
+This product uses the Census Bureau Data API but is not endorsed or certified by the Census Bureau.
+
 ## Method
 1. **Scope.** 50 states and DC: 382 CoCs and 742,420 people. Four territorial CoCs (Guam, Puerto Rico x2, U.S. Virgin Islands; 3,232 people) are excluded because no tract data were pulled. With them HUD's national total is 745,652, which this scope reconciles to exactly.
 2. **Vacancy definitions.** Broad: all vacant units. Narrow (used for the verdict): for rent + for sale + other vacant, excluding seasonal and recreational units and units rented or sold but not yet occupied. Strictest: other vacant only.
