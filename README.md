@@ -59,4 +59,6 @@ Built 2026-10-14; not yet published. The corrections log in `map1-methodology.md
 
 ## License
 
-Not yet chosen.
+The code (R scripts) is released under the MIT License; see `LICENSE`.
+
+The map images, video and carousel slides in `map1/out/` and the written analysis are © 2026 willcharris, all rights reserved. Please ask before reusing them. The underlying data belongs to its publishers (U.S. Census Bureau, HUD) under their own terms.
